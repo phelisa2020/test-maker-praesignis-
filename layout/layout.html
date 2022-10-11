@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Layout</title>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-logo"><img src="praesignis_logo-removebg-preview.png"
+                    style="height: 150px; padding-bottom:20px; text-align: center;" /></div>
+            <div>
+                <ul class="list-unstyled components">
+                    <li>
+                          <a href="#"><button onclick="document.getElementById('subscribe').style.display='block'">Create New Test</button></a>
+                        
+                    
+                    </li>
+
+                    <li>
+                        <a href="#">Online Test</a>
+                        
+                    </li>
+
+                    <li>
+                        <a href="#">All Test Results</a>
+                    </li>
+
+                    <br>
+                    <hr style="width: 75%; background-color: grey;">
+
+
+                    <li class="list-unstyled components">
+                        <a href="#">Folders</a>
+                    </li>
+
+                </ul>
+            </div>
+
+<!-- Subscribe Modal -->
+<div id="subscribe" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content" style="padding:32px">
+      <div class="w3-container w3-white">
+        <i onclick="document.getElementById('subscribe').style.display='none'"></i>
+        <h2 class="w3-wide">NEW TEST</h2>
+        <br>
+        <h4>Name</h4>
+        <p><input class="w3-input w3-border" type="text" placeholder="Name of your test "></p>
+        <h4>Folder</h4>
+        <p><input class="w3-input w3-border" type="text" placeholder="Select a folder to organize your tests..."></p>
+        <button type="button" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('subscribe').style.display='none'">Create Test</button>
+        <button type="button" class="w3-button w3-block w3-padding-large w3-grey w3-margin-bottom" onclick="document.getElementById('subscribe').style.display='none'">Cancel</button>
+
+      </div>
+    </div>
+            <footer>
+                <p>Praesignis 2022. Copyright</p>
+            </footer>
+        </nav>
+
+
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <div id="path">...</div>
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info d-lg-none">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+
+                    <!-- <button class="btn btn-info d-lg-none" id="sidebarCollapse" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button> -->
+
+                    <div class="dropdown">
+                        <div type="button" class="primary dropdown-toggle" data-toggle="dropdown">
+                            Home
+                        </div>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Profile</a>
+                            <a class="dropdown-item" href="#">About Us</a>
+                            <a class="dropdown-item" href="#">Contact Us</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/landingPage/index.html">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <h2>All the test that you created will show here //comment/</h2>
+           
+            <div class="line"></div>
+
+            <h2>...</h2>
+            <div class="line"></div>
+
+            <h2>...</h2>
+        
+            <div class="line"></div>
+
+            <h3>...</h3>
+            
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+</body>
+
+</html>
